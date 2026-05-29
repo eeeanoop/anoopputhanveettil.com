@@ -434,12 +434,11 @@ function initThemeToggle() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
   if (!toggleBtn) return;
 
-  // Retrieve saved preference or check device configuration
+  // Retrieve saved preference
   const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-  // Dashboard defaults to dark mode first, but checks saved preferences
-  if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+  // Dashboard defaults to dark mode first, only activating light mode if explicitly saved
+  if (savedTheme === 'light') {
     document.documentElement.classList.add('light-mode');
   }
 
