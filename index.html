@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anoop Puthan Veettil - Senior Site Reliability Engineer Portfolio. Managing Apple Maps systems scale, Kubernetes infrastructure, Apache Solr Platforms, and high-performance cloud operations.">
+  <title>Anoop Puthan Veettil | Senior Site Reliability Engineer</title>
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400;500;600;700&family=JetBrains+Mono:400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- SRE Dashboard Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Glow Background Textures -->
+  <div class="glow-bg-primary" aria-hidden="true"></div>
+  <div class="glow-bg-secondary" aria-hidden="true"></div>
+
+  <!-- Main Grid Dashboard Container -->
+  <div class="dashboard-container">
+    
+    <!-- HEADER PANEL: Global Cluster Status & Profile Info -->
+    <header class="header-panel" id="main-header">
+      <!-- SRE Dashboard Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle light/dark mode" title="Toggle Light/Dark Theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <div class="profile-meta">
+        <div class="avatar-wrapper">
+          <!-- Premium Custom Animated SVG Avatar representing SRE system nodes -->
+          <svg class="avatar-svg" viewBox="0 0 100 100" aria-label="Anoop Puthan Veettil Avatar Icon">
+            <defs>
+              <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#10b981" />
+                <stop offset="100%" stop-color="#0071e3" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#glow-grad)" stroke-width="2" stroke-dasharray="280" stroke-dashoffset="0" />
+            <circle cx="50" cy="50" r="35" fill="rgba(16, 185, 129, 0.05)" />
+            <!-- Server / SRE Nodes Visualized inside Avatar -->
+            <rect x="35" y="32" width="30" height="8" rx="2" fill="currentColor" opacity="0.8" />
+            <rect x="35" y="46" width="30" height="8" rx="2" fill="currentColor" opacity="0.8" />
+            <rect x="35" y="60" width="30" height="8" rx="2" fill="currentColor" opacity="0.8" />
+            <circle cx="42" cy="36" r="1.5" fill="#10b981" />
+            <circle cx="42" cy="50" r="1.5" fill="#10b981" />
+            <circle cx="42" cy="64" r="1.5" fill="#10b981" />
+            <circle cx="60" cy="36" r="1" fill="currentColor" />
+            <circle cx="60" cy="50" r="1" fill="currentColor" />
+            <circle cx="60" cy="64" r="1" fill="currentColor" />
+          </svg>
+          <span class="pulse-indicator" title="System Status: Fully Operational"></span>
+        </div>
+        <div class="profile-details">
+          <h1>Anoop Puthan Veettil</h1>
+          <p class="role-subtitle">Production Engineer at Meta Platforms | Former Apple SRE DRI</p>
+          <div class="quick-tags">
+            <span class="badge" style="background-color: var(--accent-blue); color: #ffffff;">Meta Platforms</span>
+            <span class="badge badge-outline">Apple Inc. (Former)</span>
+            <span class="badge badge-outline">Kubernetes</span>
+            <span class="badge badge-outline">Apache Solr (3.5 PB)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Operational Metrics Panel (SRE Dashboard Style) -->
+      <div class="metrics-grid" aria-label="System Metrics Summary">
+        <div class="metric-card" id="metric-uptime">
+          <div class="metric-header">
+            <span class="metric-label">GLOBAL UPTIME</span>
+            <span class="status-indicator-green"></span>
+          </div>
+          <div class="metric-value">99.999%</div>
+          <div class="metric-footer">SLO Status: HEALTHY</div>
+        </div>
+        <div class="metric-card" id="metric-scale">
+          <div class="metric-header">
+            <span class="metric-label">DATA CAPACITY</span>
+            <svg class="metric-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 12H2M12 2v20M20 7H4M20 17H4"/></svg>
+          </div>
+          <div class="metric-value" id="capacity-value">3.5 PB</div>
+          <div class="metric-footer">Apache Solr Platforms</div>
+        </div>
+        <div class="metric-card" id="metric-services">
+          <div class="metric-header">
+            <span class="metric-label">ACTIVE ENDPOINTS</span>
+            <svg class="metric-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <div class="metric-value">300+</div>
+          <div class="metric-footer">Microservices SRE DRI</div>
+        </div>
+        <div class="metric-card" id="metric-pagers">
+          <div class="metric-header">
+            <span class="metric-label">INCIDENT STATUS</span>
+            <span class="status-indicator-blue"></span>
+          </div>
+          <div class="metric-value">0 Active</div>
+          <div class="metric-footer">Pagers Autoresolving</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN BODY SECTION: Two Column Layout -->
+    <main class="dashboard-body">
+      
+      <!-- LEFT SIDEBAR: Terminal Shell & Navigation -->
+      <aside class="sidebar-panel">
+        
+        <!-- SRE Interactive Terminal Widget -->
+        <div class="terminal-wrapper" id="console-terminal">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="btn-dot close"></span>
+              <span class="btn-dot minimize"></span>
+              <span class="btn-dot maximize"></span>
+            </div>
+            <div class="terminal-title">anoop@sre-shell: ~ (zsh)</div>
+            <div class="terminal-audio-toggle" id="audio-toggle" title="Toggle Mechanical Keyboard Typing Sounds">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" class="sound-wave"/></svg>
+            </div>
+          </div>
+          <div class="terminal-body" id="terminal-screen" role="log" aria-live="polite">
+            <div class="terminal-log">
+              <span class="terminal-prompt-prefix">system-check:~$</span> run-diagnostics --verbose
+              <br><span class="text-subtle">[INFO] Initializing SRE Shell session...</span>
+              <br><span class="text-subtle">[OK] Clusters connected. Solr cluster verified.</span>
+              <br><span class="text-subtle">[OK] Welcome to Anoop Puthan Veettil's Portfolio Console!</span>
+              <br><br><span class="text-accent">SRE-Shell v1.0.0. Active DRI Session.</span>
+              <br>Type <span class="command-highlight">help</span> to list available commands and inspect my resume.
+            </div>
+            <!-- Current input line -->
+            <div class="terminal-input-line">
+              <span class="terminal-prompt">visitor@anoop-sre:~$</span>
+              <div class="terminal-input-wrapper">
+                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal Command Input">
+                <span class="terminal-cursor"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Navigation Hub -->
+        <nav class="nav-hub" aria-label="Dashboard Section Navigation">
+          <div class="nav-title">COMPONENTS OVERVIEW</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#architecture" class="nav-item active">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M12 5a7 7 0 0 1 7 7M5 12a7 7 0 0 0 7 7"/></svg>
+                <span>Systems Architecture</span>
+              </a>
+            </li>
+            <li>
+              <a href="#experience" class="nav-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span>Experience Timeline</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills" class="nav-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <span>Operational Skills</span>
+              </a>
+            </li>
+            <li>
+              <a href="#connections" class="nav-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <span>LinkedIn & Social Connection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- CONTENT PANELS: Core Portfolio Sections -->
+      <div class="content-panel">
+        
+        <!-- SECTION 1: Architecture Topology Visualizer -->
+        <section class="section-card" id="architecture">
+          <div class="card-header">
+            <h2>Systems Topology & Scale Visualizer</h2>
+            <span class="panel-badge">Interactive Map</span>
+          </div>
+          <p class="section-desc">Interactive SRE deployment topology showing Anoop's engineering scope. Click on standard node points to query availability metrics, active capacity, and scaling logs.</p>
+          
+          <div class="topology-container">
+            <!-- Dynamic CSS network nodes architecture visualizer -->
+            <div class="topology-canvas">
+              <svg class="topology-lines" viewBox="0 0 600 360" width="100%" height="100%" aria-hidden="true">
+                <!-- Connected paths -->
+                <path d="M300,180 L120,90" class="topo-line" id="line-places" />
+                <path d="M300,180 L480,90" class="topo-line" id="line-basemap" />
+                <path d="M300,180 L120,270" class="topo-line" id="line-solr" />
+                <path d="M300,180 L480,270" class="topo-line" id="line-cicd" />
+                <path d="M300,180 L300,45" class="topo-line" id="line-meta" />
+              </svg>
+              
+              <!-- Core DRI Center Node -->
+              <div class="topo-node node-center active" data-node="center" id="node-center" role="button" tabindex="0" aria-label="Anoop Puthan Veettil SRE DRI Core Node">
+                <div class="node-glow"></div>
+                <div class="node-label">SRE DRI</div>
+              </div>
+
+              <!-- Orbiting Nodes -->
+              <div class="topo-node node-orbit" style="left: 300px; top: 45px;" data-node="meta" id="node-meta" role="button" tabindex="0" aria-label="Meta Content Integrity SRE Node">
+                <div class="node-inner">Meta PE</div>
+                <div class="node-tooltip">Content Integrity SRE (Remote)<br>Ecosystem: Large-Scale Data Pipelines<br>Scope: Compute Infrastructure & Health</div>
+              </div>
+
+              <!-- Orbiting Nodes -->
+              <div class="topo-node node-orbit" style="left: 120px; top: 90px;" data-node="places" id="node-places" role="button" tabindex="0" aria-label="Places Microservices Node">
+                <div class="node-inner">Places</div>
+                <div class="node-tooltip">Places Platform (20+ microservices)<br>SLO Availability: 99.999%<br>Infrastructure: Kubernetes Pods</div>
+              </div>
+              
+              <div class="topo-node node-orbit" style="left: 480px; top: 90px;" data-node="basemap" id="node-basemap" role="button" tabindex="0" aria-label="Base Map Microservices Node">
+                <div class="node-inner">Base Map</div>
+                <div class="node-tooltip">Base Map Ecosystem (300+ microservices)<br>Release Cycle: Automated Daily<br>Troubleshooting: JFR Thread/Heap</div>
+              </div>
+
+              <div class="topo-node node-orbit" style="left: 120px; top: 270px;" data-node="solr" id="node-solr" role="button" tabindex="0" aria-label="Apache Solr Platform Node">
+                <div class="node-inner">Apache Solr</div>
+                <div class="node-tooltip">Solr Platform Offering (35+ clusters)<br>Scale: 3.5 Petabytes Managed<br>Incident State: 0 active Pagers</div>
+              </div>
+
+              <div class="topo-node node-orbit" style="left: 480px; top: 270px;" data-node="cicd" id="node-cicd" role="button" tabindex="0" aria-label="CI/CD & Spinnaker Pipeline Node">
+                <div class="node-inner">CI/CD</div>
+                <div class="node-tooltip">Pipelines: Helm, Arches, Spinnaker<br>Deployments: Automated K8s Pods<br>Rollbacks: Real-time Autonomic</div>
+              </div>
+            </div>
+            
+            <!-- Live Topology Log Console -->
+            <div class="topology-details-panel" id="topo-details" aria-live="polite">
+              <div class="panel-tag">[SYSTEM OVERVIEW]</div>
+              <div class="details-content">
+                <strong>Core Site Reliability Engineering DRI (Apple Inc.):</strong> Controlling availability, capacity optimization, and incident automation for mission-critical Apple Maps datasets across hundreds of global Kubernetes microservices. Click any peripheral node above to load its real-time telemetry.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: Career Timeline -->
+        <section class="section-card" id="experience">
+          <div class="card-header">
+            <h2>Experience Timeline</h2>
+            <span class="panel-badge">Professional Deployments</span>
+          </div>
+          <p class="section-desc">20 years of operational experience designing high-availability SRE solutions, release management systems, and high-scale infrastructure migrations.</p>
+          
+          <div class="timeline-container">
+            
+            <!-- Meta Platforms Card -->
+            <article class="timeline-item active-timeline">
+              <div class="timeline-dot-wrapper">
+                <span class="timeline-dot animated-dot"></span>
+              </div>
+              <div class="timeline-card">
+                <header class="timeline-meta">
+                  <div class="company-brand">
+                    <h3>Production Engineer</h3>
+                    <div class="company-name">Meta Platforms</div>
+                  </div>
+                  <span class="timeline-date">Mar 2026 – Present</span>
+                </header>
+                <ul class="timeline-bullets">
+                  <li><strong>Content Integrity Production Engineering:</strong> Provide comprehensive Production Engineering (PE) and Site Reliability Engineering (SRE) support to the Content Integrity team, ensuring stability and performance of large data pipelines and compute infrastructure.</li>
+                  <li><strong>Operational Health:</strong> Manage reliability and operational health of high-scale distributed systems, applying SRE best practices to improve availability, latency, and incident response.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Apple Inc Card -->
+            <article class="timeline-item">
+              <div class="timeline-dot-wrapper">
+                <span class="timeline-dot"></span>
+              </div>
+              <div class="timeline-card">
+                <header class="timeline-meta">
+                  <div class="company-brand">
+                    <h3>Senior Site Reliability Engineer & Tech Lead</h3>
+                    <div class="company-name">Apple Inc.</div>
+                  </div>
+                  <span class="timeline-date">Aug 2017 – Mar 2026</span>
+                </header>
+                <ul class="timeline-bullets">
+                  <li><strong>Core Maps Data SRE:</strong> Serving as the SRE DRI for critical global platforms, owning end-to-end performance, incident response, and SLA goals across **Places**, **Base Map**, and **BusinessConnect**.</li>
+                  <li><strong>3.5 Petabyte Solr Platform:</strong> Technical Lead managing 35+ high-performance search and indexing clusters processing massive telemetry datasets.</li>
+                  <li><strong>Kubernetes Inception & Operations:</strong> Designed, built, and operationalized the customized Kubernetes cluster environment for the Apple Maps Places org, heavily reducing server overhead.</li>
+                  <li><strong>Release Management Architecture:</strong> Created the unified automated Release Management platform for Apple Maps Data Ecosystem supporting 300+ active microservices.</li>
+                  <li><strong>Autonomic AI Agent SRE:</strong> Contributed to building a Langgraph-based intelligent AI agent for automated, RAG-driven pager alerts diagnosis and incident routing.</li>
+                  <li><strong>Distributed Team Management:</strong> Manages a team of 6 cross-geographical SRE and Cloud Engineers, running standups and capacity planning.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- State Street Card -->
+            <article class="timeline-item">
+              <div class="timeline-dot-wrapper">
+                <span class="timeline-dot"></span>
+              </div>
+              <div class="timeline-card">
+                <header class="timeline-meta">
+                  <div class="company-brand">
+                    <h3>DevOps Engineer & Java Developer</h3>
+                    <div class="company-name">State Street IMS</div>
+                  </div>
+                  <span class="timeline-date">Mar 2011 – Aug 2017</span>
+                </header>
+                <ul class="timeline-bullets">
+                  <li><strong>CI/CD Implementation:</strong> Set up the first automated Jenkins continuous integration server infrastructure, optimizing nightly deployments.</li>
+                  <li><strong>Release Validation & Automation:</strong> Wrote complex automation scripts in Bash, Ant, and Windows batch to deploy multi-tiered enterprise servers.</li>
+                  <li><strong>Sybase Database Migration:</strong> Orchestrated major database migrations (Sybase to Oracle) using Talend Open Studio ETL pipelines.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Wellpoint Anthem Card -->
+            <article class="timeline-item">
+              <div class="timeline-dot-wrapper">
+                <span class="timeline-dot"></span>
+              </div>
+              <div class="timeline-card">
+                <header class="timeline-meta">
+                  <div class="company-brand">
+                    <h3>Java Developer & Technical Lead</h3>
+                    <div class="company-name">Wellpoint Anthem</div>
+                  </div>
+                  <span class="timeline-date">Jul 2010 – Mar 2011</span>
+                </header>
+                <ul class="timeline-bullets">
+                  <li><strong>Enterprise Web Services:</strong> Wrote high-load Java web services for the Anthem Online Store, facilitating robust healthcare selection routing.</li>
+                  <li><strong>Pharmacy Website Upgrades:</strong> Optimized administrative portal backends, reducing runtime database constraints via Spring Batch automation.</li>
+                </ul>
+              </div>
+            </article>
+            
+          </div>
+        </section>
+
+        <!-- SECTION 3: Technical Skills Matrix -->
+        <section class="section-card" id="skills">
+          <div class="card-header">
+            <h2>SRE Skills Inventory</h2>
+            <span class="panel-badge">Stack Status</span>
+          </div>
+          <p class="section-desc">Tier-structured technical capabilities and toolchains classified by active cloud-native and system reliability domains.</p>
+          
+          <div class="skills-grid">
+            
+            <div class="skills-card">
+              <div class="skills-category-title">AI Agents & Orchestration</div>
+              <div class="skills-tag-group">
+                <span class="skill-tag skill-highlight" data-node="center">Langgraph</span>
+                <span class="skill-tag skill-highlight" data-node="center">Langchain</span>
+                <span class="skill-tag" data-node="center">Large Language Models (LLMs)</span>
+                <span class="skill-tag" data-node="center">RAG Systems</span>
+                <span class="skill-tag" data-node="center">Knowledge Graphs</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-category-title">Cloud & Containers</div>
+              <div class="skills-tag-group">
+                <span class="skill-tag skill-highlight" data-node="places">Kubernetes</span>
+                <span class="skill-tag skill-highlight" data-node="places">Docker</span>
+                <span class="skill-tag" data-node="places">AWS Cloud</span>
+                <span class="skill-tag" data-node="places">On-Premises Infrastructure</span>
+                <span class="skill-tag" data-node="places">Linux Kernels</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-category-title">Monitoring & Alerting</div>
+              <div class="skills-tag-group">
+                <span class="skill-tag skill-highlight" data-node="solr">Splunk Monitoring</span>
+                <span class="skill-tag skill-highlight" data-node="solr">Prometheus</span>
+                <span class="skill-tag" data-node="solr">Grafana Dashboards</span>
+                <span class="skill-tag" data-node="solr">ELK Stack</span>
+                <span class="skill-tag" data-node="solr">OpenTelemetry</span>
+                <span class="skill-tag" data-node="solr">Hubble Tracing</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-category-title">Search & Databases</div>
+              <div class="skills-tag-group">
+                <span class="skill-tag skill-highlight" data-node="solr">Apache Solr 8</span>
+                <span class="skill-tag" data-node="solr">Redis Caching</span>
+                <span class="skill-tag" data-node="solr">Postgres SQL</span>
+                <span class="skill-tag" data-node="solr">MySQL</span>
+                <span class="skill-tag" data-node="solr">Oracle / Sybase</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-category-title">Automation & Languages</div>
+              <div class="skills-tag-group">
+                <span class="skill-tag skill-highlight" data-node="cicd">GoLang</span>
+                <span class="skill-tag skill-highlight" data-node="cicd">Python 3</span>
+                <span class="skill-tag skill-highlight" data-node="cicd">Java 17 (JFR, JVM Tuning)</span>
+                <span class="skill-tag" data-node="cicd">Bash Scripting</span>
+                <span class="skill-tag" data-node="cicd">Helm Charts</span>
+                <span class="skill-tag" data-node="cicd">Spinnaker / Jenkins</span>
+                <span class="skill-tag" data-node="cicd">Ansible / Puppet</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <div class="skills-category-title">Core SRE Principles</div>
+              <div class="skills-tag-group">
+                <span class="skill-tag">Incident Commander</span>
+                <span class="skill-tag">Mean Time To Resolution (MTTR)</span>
+                <span class="skill-tag">Blameless Post-Mortems</span>
+                <span class="skill-tag">Capacity Planning</span>
+                <span class="skill-tag">Java Heap/Thread Analysis</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SECTION 4: LinkedIn & Connections Panel -->
+        <section class="section-card" id="connections">
+          <div class="card-header">
+            <h2>Systems Interconnect & Communication</h2>
+            <span class="panel-badge">Social Link State</span>
+          </div>
+          <p class="section-desc">Connect directly with Anoop to discuss site reliability challenges, search indexing architectural design, and modern DevOps pipelines.</p>
+          
+          <div class="connections-wrapper">
+            
+            <!-- LinkedIn Connect -->
+            <a href="https://www.linkedin.com/in/anoop-puthanveettil" target="_blank" rel="noopener noreferrer" class="connect-card" id="linkedin-card" aria-label="Connect with Anoop on LinkedIn">
+              <div class="connect-header">
+                <span class="connect-status">LINK STATE: ACTIVE</span>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="connect-title">Anoop Puthan Veettil</div>
+              <div class="connect-desc">Senior SRE, Apple Inc.</div>
+              <div class="connect-action">
+                <span>ping -c 1 linkedin.com/in/anoop-puthanveettil</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+
+            <!-- Direct Email Connect -->
+            <a href="mailto:eee.anoop@gmail.com" class="connect-card" id="email-card" aria-label="Send email to Anoop">
+              <div class="connect-header">
+                <span class="connect-status">PORT 25: HEALTHY</span>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="connect-title">eee.anoop@gmail.com</div>
+              <div class="connect-desc">Direct System Connection</div>
+              <div class="connect-action">
+                <span>sendmail eee.anoop@gmail.com</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Education & Credentials Block -->
+          <div class="education-grid">
+            <div class="education-card">
+              <div class="edu-header">
+                <span class="edu-tag">GRADUATE</span>
+                <span class="edu-gpa">GPA 3.7</span>
+              </div>
+              <div class="edu-degree">Master of Business Administration (MBA)</div>
+              <div class="edu-major">Information Systems</div>
+              <div class="edu-school">California State University, Fullerton (2017)</div>
+            </div>
+
+            <div class="education-card">
+              <div class="edu-header">
+                <span class="edu-tag">UNDERGRADUATE</span>
+                <span class="edu-gpa">GPA 3.5</span>
+              </div>
+              <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
+              <div class="edu-major">Electrical & Electronics Engineering</div>
+              <div class="edu-school">University of Calicut, India (2006)</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- FOOTER PANEL -->
+    <footer class="footer-panel">
+      <div class="footer-left">
+        <span class="status-indicator-green"></span>
+        <span>All Systems Nominal</span>
+      </div>
+      <div class="footer-center">
+        <span>© 2026 Anoop Puthan Veettil. Designed via Antigravity SRE-Core.</span>
+      </div>
+      <div class="footer-right">
+        <span>Uptime: 20 Years Experience</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- FLOATING CONNECTION STATUS WIDGET (Bottom Right) -->
+  <div class="floating-sre-widget" id="sre-widget" role="complementary" aria-label="Direct Connect SRE Panel">
+    <button class="widget-trigger" id="widget-trigger-btn" aria-haspopup="true" aria-expanded="false" aria-label="Toggle direct contact links">
+      <svg class="widget-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="widget-pulse"></span>
+    </button>
+    <div class="widget-card" id="widget-card-panel" aria-hidden="true">
+      <div class="widget-card-header">
+        <div class="widget-avatar">AP</div>
+        <div class="widget-meta">
+          <div class="widget-name">Anoop P.V.</div>
+          <div class="widget-status">Status: Online</div>
+        </div>
+      </div>
+      <div class="widget-card-body">
+        <p>Site Reliability Engineer DRI on shift. Connect on LinkedIn for immediate pager sync.</p>
+        <div class="widget-links">
+          <a href="https://www.linkedin.com/in/anoop-puthanveettil" target="_blank" rel="noopener noreferrer" class="widget-btn-primary">LinkedIn Connect</a>
+          <a href="mailto:eee.anoop@gmail.com" class="widget-btn-secondary">Email Node</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
